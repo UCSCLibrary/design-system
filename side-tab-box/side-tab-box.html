@@ -1,0 +1,59 @@
+<style>
+  :root {
+  /* Colors */
+  --tab-bg: #003c6c;
+  --tab-active-bg: #f3faff;
+  --tab-text: #fff;
+  --tab-active-text: #000;
+
+  /* Layout */
+  --tab-nav-width: 25%;
+  --tab-content-width: calc(100% - var(--tab-nav-width));
+}
+
+
+#lg-content-area [id^="s-lib-ctabs-"] {
+  display: flex;
+  flex-direction: row;
+}
+
+#lg-content-area [id^="s-lib-ctabs-"] ul.nav-tabs.nav {
+  width: var(--tab-nav-width);
+  display: flex;
+  flex-direction: column;
+  top: 0;
+}
+
+#lg-content-area [id^="s-lib-ctabs-"] ul.nav-tabs li {
+  margin-bottom: 1rem;
+}
+
+#lg-content-area [id^="s-lib-ctabs-"] ul.nav-tabs li a {
+  border: none;
+  border-radius: 5px 0 0 5px;
+  color: var(--tab-text);
+  background-color: var(--tab-bg);
+  margin: 0;
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.25s ease-in-out,
+              color 0.25s ease-in-out,
+              font-weight 0.25s ease-in-out;
+}
+
+#lg-content-area [id^="s-lib-ctabs-"] ul.nav-tabs li a:hover,
+#lg-content-area [id^="s-lib-ctabs-"] ul.nav-tabs li.active a {
+  background-color: var(--tab-active-bg);
+  color: var(--tab-active-text);
+  font-weight: bold;
+}
+
+#lg-content-area [id^="s-lib-ctabs-"] .tab-content {
+  width: var(--tab-content-width);
+  padding-left: 3rem;
+  box-shadow: 1.95px 1.95px 2.6px rgba(0, 0, 0, 0.15);
+  border-radius: 0 5px 5px 5px;
+  border: none;
+  flex: auto;
+  background-color: var(--tab-active-bg);
+}
+</style>
