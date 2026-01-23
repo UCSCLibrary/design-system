@@ -1,0 +1,47 @@
+<style type="text/css">
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+  :root {
+    --btn-width: 8rem;
+    --btn-aspect-ratio: 8 / 3.75;
+    --btn-border-radius: 0.177rem;
+    --btn-font-size: 1rem;
+    --btn-primary-color: #003c6c;
+    --btn-secondary-color: white;
+  }
+
+  .button {
+    width: var(--btn-width);
+    aspect-ratio: var(--btn-aspect-ratio);
+  }
+
+  #s-lg-guide-main .button a {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--btn-border-radius);
+    font-size: var(--btn-font-size);
+    color: var(--btn-secondary-color);
+    background: var(--btn-primary-color);
+    text-decoration: none !important;
+    font-family: 'Open Sans', Cambria, Cochin, Georgia, Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  #s-lg-guide-main .button a:hover {
+    color: var(--btn-primary-color);
+    background: var(--btn-secondary-color);
+    border: solid 2px var(--btn-primary-color);
+  }
+</style>
+
+<div id="s-lg-guide-main">
+  <div class="button">
+    <a href="" target="_blank">Primary</a>
+  </div>
+</div>
