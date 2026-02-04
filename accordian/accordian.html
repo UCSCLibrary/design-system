@@ -1,134 +1,210 @@
 <style>
-    :root {
-      --color-content-bg: #F3FAFF;
-      --color-tab-active: #003C6C;
-      --color-text-underline: #0A5692;
-      --color-text-active: #FFF;
-    }
-    
-    .panel { 
-        box-shadow: none;
-    }
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
-    .panel-group .panel+.panel { /* ignores first panel */
-        margin-top: 0.125rem;
-    }
+  :root {
+    --color-content-bg: #f3faff;
+    --color-tab-active: #003c6c;
+    --color-text-underline: #0a5692;
+    --color-text-active: #fff;
+  }
 
-    .panel-default {
-        border: none;
-    }
+  .panel {
+    box-shadow: none;
+  }
 
-    .panel-default > .panel-heading {
-        background: var(--color-content-bg);
-        border: none;
-        position: relative;
-    }
+  .panel-group .panel + .panel {
+    /* ignores first panel */
+    margin-top: 0.125rem;
+  }
 
-    .panel-default > .panel-collapse > .panel-body {
-        background: var(--color-content-bg);
-        border: none;
-    }
+  .panel-default {
+    border: none;
+  }
 
-    .panel-default > .panel-heading > h4 > a {
-        display: block;
-        width: 100%;
-        outline: none;
-        text-decoration-line: underline;
-        text-decoration-style: solid;
-        text-decoration-skip-ink: none;
-        text-decoration-color: var(--color-text-underline);
-        text-decoration-thickness: 7%;
-        text-underline-offset: 10%;
-        text-underline-position: from-font;   
-    }
-    .panel-default > .panel-heading.active {
-        background: var(--color-tab-active);
-    }
+  .panel-default > .panel-heading {
+    background: var(--color-content-bg);
+    border: none;
+    position: relative;
+  }
 
-    .panel-default > .panel-heading.active > h4 > a {
-        color: var(--color-text-active);
-        text-decoration-color: #FC3;
-    }
+  .panel-default > .panel-collapse > .panel-body {
+    background: var(--color-content-bg);
+    border: none;
+  }
 
-    .icon {
-        fill: var(--color-tab-active);
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translate(-50%, -50%);
-    }
+  .panel-default > .panel-heading > h4 > a {
+    display: block;
+    width: 100%;
+    outline: none;
+    color: var(--color-tab-active);
+    font-family: "Open Sans", Courier, monospace;
+    font-weight: 600;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-color: var(--color-text-underline);
+    text-decoration-thickness: 7%;
+    text-underline-offset: 10%;
+    text-underline-position: from-font;
+  }
+  .panel-default > .panel-heading.active {
+    background: var(--color-tab-active);
+  }
 
-    .icon.active {
-        fill: var(--color-text-active);
-    }
+  .panel-default > .panel-heading.active > h4 > a {
+    color: var(--color-text-active);
+    text-decoration-color: #fc3;
+  }
+
+  .icon {
+    fill: var(--color-tab-active);
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  .icon.active {
+    fill: var(--color-text-active);
+  }
 </style>
 
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div
+  class="panel-group"
+  id="accordion"
+  role="tablist"
+  aria-multiselectable="true"
+>
   <div class="panel panel-default">
     <div class="panel-heading active" role="tab" id="headingOne">
       <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseTwo">
+        <a
+          class="collapsed"
+          role="button"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseOne"
+          aria-expanded="false"
+          aria-controls="collapseTwo"
+        >
           Tab 1
         </a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10" class="icon active">
-          <path d="M16.6258 9.6176C16.3861 9.86245 16.0611 10 15.7222 10C15.3833 10 15.0583 9.86245 14.8186 9.6176L8.49228 3.15257L2.16593 9.6176C1.92488 9.85551 1.60205 9.98716 1.26694 9.98418C0.931843 9.9812 0.611292 9.84385 0.374331 9.60169C0.137369 9.35954 0.0029583 9.03196 4.76837e-05 8.68951C-0.00286484 8.34706 0.125956 8.01715 0.358763 7.77082L7.5887 0.382399C7.82837 0.137549 8.15339 0 8.49228 0C8.83118 0 9.1562 0.137549 9.39587 0.382399L16.6258 7.77082C16.8654 8.01575 17 8.34789 17 8.69421C17 9.04053 16.8654 9.37268 16.6258 9.6176Z"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="10"
+          viewBox="0 0 17 10"
+          class="icon active"
+        >
+          <path
+            d="M16.6258 9.6176C16.3861 9.86245 16.0611 10 15.7222 10C15.3833 10 15.0583 9.86245 14.8186 9.6176L8.49228 3.15257L2.16593 9.6176C1.92488 9.85551 1.60205 9.98716 1.26694 9.98418C0.931843 9.9812 0.611292 9.84385 0.374331 9.60169C0.137369 9.35954 0.0029583 9.03196 4.76837e-05 8.68951C-0.00286484 8.34706 0.125956 8.01715 0.358763 7.77082L7.5887 0.382399C7.82837 0.137549 8.15339 0 8.49228 0C8.83118 0 9.1562 0.137549 9.39587 0.382399L16.6258 7.77082C16.8654 8.01575 17 8.34789 17 8.69421C17 9.04053 16.8654 9.37268 16.6258 9.6176Z"
+          />
         </svg>
       </h4>
     </div>
-    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+    <div
+      id="collapseOne"
+      class="panel-collapse collapse in"
+      role="tabpanel"
+      aria-labelledby="headingOne"
+    >
       <div class="panel-body">
-        Lorem ipsum dolor sit amet consectetur. Blandit enim euismod adipiscing ac est amet id. Morbi euismod faucibus sodales faucibus magna ut sed. Eget quis facilisi urna cursus curabitur vulputate. Ipsum pellentesque massa sit amet vitae leo leo. 
+        Lorem ipsum dolor sit amet consectetur. Blandit enim euismod adipiscing
+        ac est amet id. Morbi euismod faucibus sodales faucibus magna ut sed.
+        Eget quis facilisi urna cursus curabitur vulputate. Ipsum pellentesque
+        massa sit amet vitae leo leo.
       </div>
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingTwo">
       <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <a
+          class="collapsed"
+          role="button"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseTwo"
+          aria-expanded="false"
+          aria-controls="collapseTwo"
+        >
           Tab 2
         </a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10" class="icon">
-          <path d="M0.374196 0.3824C0.613866 0.137549 0.938885 0 1.27778 0C1.61667 0 1.94169 0.137549 2.18136 0.3824L8.50772 6.84743L14.8341 0.3824C15.0751 0.144488 15.398 0.0128441 15.7331 0.0158195C16.0682 0.018795 16.3887 0.156154 16.6257 0.398309C16.8626 0.640464 16.997 0.968042 17 1.31049C17.0029 1.65294 16.874 1.98285 16.6412 2.22918L9.4113 9.6176C9.17163 9.86245 8.84661 10 8.50772 10C8.16882 10 7.8438 9.86245 7.60413 9.6176L0.374196 2.22918C0.134599 1.98425 0 1.65211 0 1.30579C0 0.959466 0.134599 0.627323 0.374196 0.3824Z"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="10"
+          viewBox="0 0 17 10"
+          class="icon"
+        >
+          <path
+            d="M0.374196 0.3824C0.613866 0.137549 0.938885 0 1.27778 0C1.61667 0 1.94169 0.137549 2.18136 0.3824L8.50772 6.84743L14.8341 0.3824C15.0751 0.144488 15.398 0.0128441 15.7331 0.0158195C16.0682 0.018795 16.3887 0.156154 16.6257 0.398309C16.8626 0.640464 16.997 0.968042 17 1.31049C17.0029 1.65294 16.874 1.98285 16.6412 2.22918L9.4113 9.6176C9.17163 9.86245 8.84661 10 8.50772 10C8.16882 10 7.8438 9.86245 7.60413 9.6176L0.374196 2.22918C0.134599 1.98425 0 1.65211 0 1.30579C0 0.959466 0.134599 0.627323 0.374196 0.3824Z"
+          />
         </svg>
       </h4>
     </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="panel-body">
-        yap
-      </div>
+    <div
+      id="collapseTwo"
+      class="panel-collapse collapse"
+      role="tabpanel"
+      aria-labelledby="headingTwo"
+    >
+      <div class="panel-body">yap</div>
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="headingThree">
       <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <a
+          class="collapsed"
+          role="button"
+          data-toggle="collapse"
+          data-parent="#accordion"
+          href="#collapseThree"
+          aria-expanded="false"
+          aria-controls="collapseThree"
+        >
           Tab 3
         </a>
-        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="10" viewBox="0 0 17 10" class="icon">
-          <path d="M0.374196 0.3824C0.613866 0.137549 0.938885 0 1.27778 0C1.61667 0 1.94169 0.137549 2.18136 0.3824L8.50772 6.84743L14.8341 0.3824C15.0751 0.144488 15.398 0.0128441 15.7331 0.0158195C16.0682 0.018795 16.3887 0.156154 16.6257 0.398309C16.8626 0.640464 16.997 0.968042 17 1.31049C17.0029 1.65294 16.874 1.98285 16.6412 2.22918L9.4113 9.6176C9.17163 9.86245 8.84661 10 8.50772 10C8.16882 10 7.8438 9.86245 7.60413 9.6176L0.374196 2.22918C0.134599 1.98425 0 1.65211 0 1.30579C0 0.959466 0.134599 0.627323 0.374196 0.3824Z"/>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="17"
+          height="10"
+          viewBox="0 0 17 10"
+          class="icon"
+        >
+          <path
+            d="M0.374196 0.3824C0.613866 0.137549 0.938885 0 1.27778 0C1.61667 0 1.94169 0.137549 2.18136 0.3824L8.50772 6.84743L14.8341 0.3824C15.0751 0.144488 15.398 0.0128441 15.7331 0.0158195C16.0682 0.018795 16.3887 0.156154 16.6257 0.398309C16.8626 0.640464 16.997 0.968042 17 1.31049C17.0029 1.65294 16.874 1.98285 16.6412 2.22918L9.4113 9.6176C9.17163 9.86245 8.84661 10 8.50772 10C8.16882 10 7.8438 9.86245 7.60413 9.6176L0.374196 2.22918C0.134599 1.98425 0 1.65211 0 1.30579C0 0.959466 0.134599 0.627323 0.374196 0.3824Z"
+          />
         </svg>
       </h4>
     </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="panel-body">  
-        yap
-      </div>
+    <div
+      id="collapseThree"
+      class="panel-collapse collapse"
+      role="tabpanel"
+      aria-labelledby="headingThree"
+    >
+      <div class="panel-body">yap</div>
+    </div>
   </div>
 </div>
 
 <script>
-    const active_icon = "M16.6258 9.6176C16.3861 9.86245 16.0611 10 15.7222 10C15.3833 10 15.0583 9.86245 14.8186 9.6176L8.49228 3.15257L2.16593 9.6176C1.92488 9.85551 1.60205 9.98716 1.26694 9.98418C0.931843 9.9812 0.611292 9.84385 0.374331 9.60169C0.137369 9.35954 0.0029583 9.03196 4.76837e-05 8.68951C-0.00286484 8.34706 0.125956 8.01715 0.358763 7.77082L7.5887 0.382399C7.82837 0.137549 8.15339 0 8.49228 0C8.83118 0 9.1562 0.137549 9.39587 0.382399L16.6258 7.77082C16.8654 8.01575 17 8.34789 17 8.69421C17 9.04053 16.8654 9.37268 16.6258 9.6176Z"
-    const normal_icon = "M0.374196 0.3824C0.613866 0.137549 0.938885 0 1.27778 0C1.61667 0 1.94169 0.137549 2.18136 0.3824L8.50772 6.84743L14.8341 0.3824C15.0751 0.144488 15.398 0.0128441 15.7331 0.0158195C16.0682 0.018795 16.3887 0.156154 16.6257 0.398309C16.8626 0.640464 16.997 0.968042 17 1.31049C17.0029 1.65294 16.874 1.98285 16.6412 2.22918L9.4113 9.6176C9.17163 9.86245 8.84661 10 8.50772 10C8.16882 10 7.8438 9.86245 7.60413 9.6176L0.374196 2.22918C0.134599 1.98425 0 1.65211 0 1.30579C0 0.959466 0.134599 0.627323 0.374196 0.3824Z"
+  const active_icon =
+    "M16.6258 9.6176C16.3861 9.86245 16.0611 10 15.7222 10C15.3833 10 15.0583 9.86245 14.8186 9.6176L8.49228 3.15257L2.16593 9.6176C1.92488 9.85551 1.60205 9.98716 1.26694 9.98418C0.931843 9.9812 0.611292 9.84385 0.374331 9.60169C0.137369 9.35954 0.0029583 9.03196 4.76837e-05 8.68951C-0.00286484 8.34706 0.125956 8.01715 0.358763 7.77082L7.5887 0.382399C7.82837 0.137549 8.15339 0 8.49228 0C8.83118 0 9.1562 0.137549 9.39587 0.382399L16.6258 7.77082C16.8654 8.01575 17 8.34789 17 8.69421C17 9.04053 16.8654 9.37268 16.6258 9.6176Z";
+  const normal_icon =
+    "M0.374196 0.3824C0.613866 0.137549 0.938885 0 1.27778 0C1.61667 0 1.94169 0.137549 2.18136 0.3824L8.50772 6.84743L14.8341 0.3824C15.0751 0.144488 15.398 0.0128441 15.7331 0.0158195C16.0682 0.018795 16.3887 0.156154 16.6257 0.398309C16.8626 0.640464 16.997 0.968042 17 1.31049C17.0029 1.65294 16.874 1.98285 16.6412 2.22918L9.4113 9.6176C9.17163 9.86245 8.84661 10 8.50772 10C8.16882 10 7.8438 9.86245 7.60413 9.6176L0.374196 2.22918C0.134599 1.98425 0 1.65211 0 1.30579C0 0.959466 0.134599 0.627323 0.374196 0.3824Z";
 
-    $('#accordion').on('show.bs.collapse', (e) => {
-        $(e.target).closest('.panel').find('.panel-heading').addClass('active')
-        $(e.target).closest('.panel').find('.icon').addClass('active')
-        $(e.target).closest('.panel').find('path').attr('d', active_icon)
-    });
+  $("#accordion").on("show.bs.collapse", (e) => {
+    $(e.target).closest(".panel").find(".panel-heading").addClass("active");
+    $(e.target).closest(".panel").find(".icon").addClass("active");
+    $(e.target).closest(".panel").find("path").attr("d", active_icon);
+  });
 
-    $('#accordion').on('hide.bs.collapse', (e) => {
-        $(e.target).closest('.panel').find('.panel-heading').removeClass('active')
-        $(e.target).closest('.panel').find('.icon').removeClass('active')
-        $(e.target).closest('.panel').find('path').attr('d', normal_icon)
-    });
+  $("#accordion").on("hide.bs.collapse", (e) => {
+    $(e.target).closest(".panel").find(".panel-heading").removeClass("active");
+    $(e.target).closest(".panel").find(".icon").removeClass("active");
+    $(e.target).closest(".panel").find("path").attr("d", normal_icon);
+  });
 </script>

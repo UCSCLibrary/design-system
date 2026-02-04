@@ -1,16 +1,22 @@
 <style>
   @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+  :root {
+    --max-width: 100%;
+    --border: 1px solid #aec6da;
+    --table-header-font-size: 1.6rem;
+    --table-data-font-size: 1.6rem;
+  }
+
   table.styled {
-    width: 60vw;
+    max-width: var(--max-width);
     border-collapse: separate;
   }
 
   table.styled th,
   table.styled td {
-    border-right: 1px solid #aec6da;
-    border-bottom: 1px solid #aec6da;
-    width: 25%;
+    border-right: var(--border);
+    border-bottom: var(--border);
     padding: 0.75rem;
     box-sizing: border-box;
     font-family: 'Open Sans', Courier, monospace;
@@ -18,16 +24,17 @@
 
   table.styled th:first-child,
   table.styled td:first-child {
-    border-left: 1px solid #aec6da;
+    border-left: var(--border);
   }
 
   table.styled th {
-    border-top: solid 1px #aec6da;
+    border-top: var(--border);
     color: white;
     background: #0d4673;
     height: 4.6875rem;
-    font-size: 1.375rem;
-    font-weight: 600;
+    font-size: var(--table-header-font-size);
+    line-height: 130%;
+    font-weight: bold;
     text-align: center;
   }
 
@@ -35,8 +42,9 @@
     color: black;
     background: white;
     height: 3rem;
-    font-size: 1.125rem;
+    font-size: var(--table-data-font-size);
     text-align: left;
+    vertical-align: text-top;
   }
 
   table.styled th:first-of-type {
