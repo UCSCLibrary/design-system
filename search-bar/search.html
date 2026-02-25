@@ -1,0 +1,89 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+  :root {
+    --width: 40rem;
+    --height: 4rem;
+  }
+
+  .search-bar {
+    width: calc(var(--width) * 4 / 5);
+    height: var(--height);
+    padding: 1rem;
+    border: none;
+    border-radius: 0.177rem;
+    background: #f3f3f3;
+    color: #424242;
+    font-family: 'Open Sans';
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+
+  .search-btn {
+    width: calc(var(--width) * 1 / 5);
+    height: var(--height);
+    border: none;
+    background: #003c6c;
+    color: #fff;
+    font-family: 'Open Sans';
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  .search-bar:hover {
+    background-color: #f3faff;
+    color: #003c6c;
+  }
+</style>
+
+<script>
+  function searchPrimo() {
+    document.getElementById('primoQuery').value =
+      'any,contains,' + document.getElementById('primoQueryTemp').value;
+    document.forms['searchForm'].submit();
+  }
+</script>
+
+<form
+  action="https://ucsc.primo.exlibrisgroup.com/discovery/search"
+  enctype="application/x-www-form-urlencoded; charset=utf-8"
+  method="get"
+  name="searchForm"
+  onsubmit="searchPrimo()"
+  target="_self"
+>
+  <!-- Customizable Parameters -->
+  <input name="institution" type="hidden" value="01CDL-SCR_INST" />
+  <input name="vid" type="hidden" value="01CDL_SCR_INST:USCS" />
+  <input name="tab" type="hidden" value="Everything" />
+  <input name="search_scope" type="hidden" value="MyInst_and_CI" />
+  <input name="mode" type="hidden" value="basic" />
+  <!-- Fixed parameters -->
+  <input name="displayMode" type="hidden" value="full" />
+  <input name="bulkSize" type="hidden" value="10" />
+  <input name="highlight" type="hidden" value="true" />
+  <input name="dum" type="hidden" value="true" />
+  <input id="primoQuery" name="query" type="hidden" />
+  <input name="displayField" type="hidden" value="all" />
+  <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+  <input name="pcAvailabiltyMode" type="hidden" value="true" />
+  <input
+    class="search-bar"
+    id="primoQueryTemp"
+    size="25"
+    title="search"
+    type="text"
+    value=""
+    placeholder="Search anything"
+  />
+  <!-- Search Button -->
+  <input
+    class="search-btn"
+    alt="Search"
+    id="go"
+    onclick="searchPrimo()"
+    title="Search"
+    type="button"
+    value="Search"
+  />
+</form>
