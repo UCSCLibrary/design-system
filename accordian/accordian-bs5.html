@@ -1,0 +1,130 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+  #bs5-accordion {
+    --color-content-bg: #f3faff;
+    --color-tab-active: #003c6c;
+    --color-text-underline: #0a5692;
+    --color-text-active: #fff;
+  }
+  #bs5-accordion .accordion-item {
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    margin-top: 2px;
+  }
+  #bs5-accordion .accordion-item:first-child {
+    margin-top: 0;
+  }
+  #bs5-accordion .accordion-header {
+    background: var(--color-content-bg);
+    border-radius: 0 !important;
+  }
+  #bs5-accordion .accordion-button {
+    background: var(--color-content-bg) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    color: var(--color-tab-active);
+    font-family: "Open Sans", Courier, monospace;
+    font-weight: 600;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-color: var(--color-text-underline);
+    text-decoration-thickness: 7%;
+    text-underline-offset: 10%;
+    text-underline-position: from-font;
+    box-shadow: none !important;
+    padding: 0.469rem 1.563rem 0.469rem 0.625rem;
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23003c6c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+  }
+  #bs5-accordion .accordion-button:not(.collapsed) {
+    background: var(--color-tab-active) !important;
+    color: var(--color-text-active) !important;
+    text-decoration-color: #fc3;
+    box-shadow: none !important;
+  }
+  #bs5-accordion .accordion-collapse {
+    border: none !important;
+  }
+  #bs5-accordion .accordion-body {
+    background: var(--color-content-bg);
+    border: none !important;
+    padding: 0.625rem;
+  }
+</style>
+
+<div class="accordion bs5-accordion" id="bs5-accordion">
+  <div class="accordion-item">
+    <h4 class="accordion-header" id="bs5-headingOne">
+      <button
+        class="accordion-button"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#bs5-collapseOne"
+        aria-expanded="true"
+      >
+        Tab 1 in bootstrap 5
+      </button>
+    </h4>
+    <div id="bs5-collapseOne" class="accordion-collapse collapse show">
+      <div class="accordion-body">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h4 class="accordion-header" id="bs5-headingTwo">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#bs5-collapseTwo"
+        aria-expanded="false"
+      >
+        Tab 2
+      </button>
+    </h4>
+    <div id="bs5-collapseTwo" class="accordion-collapse collapse">
+      <div class="accordion-body">Tab 2 content here.</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h4 class="accordion-header" id="bs5-headingThree">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#bs5-collapseThree"
+        aria-expanded="false"
+      >
+        Tab 3
+      </button>
+    </h4>
+    <div id="bs5-collapseThree" class="accordion-collapse collapse">
+      <div class="accordion-body">Tab 3 content here.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const rootFontSize = window.getComputedStyle(
+    document.documentElement,
+  ).fontSize;
+  const version = rootFontSize === "16px" ? "Bootstrap 5" : "Bootstrap 3";
+  console.log(`Currently running: ${version}`);
+
+  if (version !== "Bootstrap 5") {
+    document.getElementById("bs5-accordion").style.display = "none";
+  } else {
+    $(document).ready(function () {
+      $("#bs5-accordion").on("show.bs.collapse", function (e) {
+        $("#bs5-accordion .accordion-collapse.show")
+          .not(e.target)
+          .collapse("hide");
+      });
+    });
+  }
+</script>
