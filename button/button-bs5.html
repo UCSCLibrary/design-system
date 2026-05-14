@@ -1,0 +1,78 @@
+<style type="text/css">
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+  :root {
+    --root-font-size: 10px;
+    --btn-width: 12rem;
+    --btn-aspect-ratio: 8 / 3.75;
+    --btn-border-radius: 0.177rem;
+    --btn-font-size: 1.5rem;
+    --btn-primary-color: #003c6c;
+    --btn-secondary-color: white;
+  }
+
+  .button {
+    width: var(--btn-width);
+    aspect-ratio: var(--btn-aspect-ratio);
+  }
+
+  #s-lg-guide-main .button a {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--btn-border-radius);
+    font-size: var(--btn-font-size);
+    color: var(--btn-secondary-color);
+    background: var(--btn-primary-color);
+    text-decoration: none !important;
+    font-family: "Open Sans", Cambria, Cochin, Georgia, Times, serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  #s-lg-guide-main .button a:hover {
+    color: var(--btn-primary-color);
+    background: var(--btn-secondary-color);
+    border: solid 2px var(--btn-primary-color);
+  }
+</style>
+
+<script>
+  (() => {
+    const rootFontSize = window.getComputedStyle(
+      document.documentElement,
+    ).fontSize;
+    const isBS5 = rootFontSize === "16px";
+    const styles = window.getComputedStyle(document.documentElement);
+    const rootScale = 10 / 16;
+
+    const scaleRemVariable = (name) => {
+      const value = styles.getPropertyValue(name).trim();
+      const remValue = parseFloat(value);
+
+      if (value.endsWith("rem") && !Number.isNaN(remValue)) {
+        document.documentElement.style.setProperty(
+          name,
+          `${remValue * rootScale}rem`,
+        );
+      }
+    };
+
+    if (isBS5) {
+      scaleRemVariable("--btn-width");
+      scaleRemVariable("--btn-border-radius");
+      scaleRemVariable("--btn-font-size");
+      document.documentElement.style.setProperty("--root-font-size", "16px");
+    }
+  })();
+</script>
+
+<div id="s-lg-guide-main">
+  <div class="button">
+    <a href="" target="_blank">Primary</a>
+  </div>
+</div>

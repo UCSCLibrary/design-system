@@ -1,0 +1,134 @@
+<style type="text/css">
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+  :root {
+    --root-font-size: 10px;
+    --max-width: 100%;
+    --border: 1px solid #aec6da;
+    --table-border-radius: 0.375rem;
+    --table-padding: 0.75rem;
+    --table-header-bg: #0d4673;
+    --table-header-color: white;
+    --table-header-height: 4.6875rem;
+    --table-header-font-size: 1.6rem;
+    --table-header-line-height: 130%;
+    --table-header-font-weight: 700;
+    --table-data-bg: white;
+    --table-data-color: black;
+    --table-data-height: 3rem;
+    --table-data-font-size: 1.6rem;
+  }
+
+  table.styled {
+    max-width: var(--max-width);
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+
+  table.styled th,
+  table.styled td {
+    border-right: var(--border);
+    border-bottom: var(--border);
+    padding: var(--table-padding);
+    box-sizing: border-box;
+    font-family: "Open Sans", Courier, monospace;
+  }
+
+  table.styled th:first-child,
+  table.styled td:first-child {
+    border-left: var(--border);
+  }
+
+  table.styled th {
+    border-top: var(--border);
+    color: var(--table-header-color);
+    background: var(--table-header-bg);
+    height: var(--table-header-height);
+    font-size: var(--table-header-font-size);
+    line-height: var(--table-header-line-height);
+    font-weight: var(--table-header-font-weight);
+    text-align: center;
+  }
+
+  table.styled td {
+    color: var(--table-data-color);
+    background: var(--table-data-bg);
+    height: var(--table-data-height);
+    font-size: var(--table-data-font-size);
+    text-align: left;
+    vertical-align: text-top;
+  }
+
+  table.styled th:first-of-type {
+    border-top-left-radius: var(--table-border-radius);
+  }
+  table.styled th:last-of-type {
+    border-top-right-radius: var(--table-border-radius);
+  }
+  table.styled tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: var(--table-border-radius);
+  }
+  table.styled tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: var(--table-border-radius);
+  }
+</style>
+
+<script>
+  (() => {
+    const rootFontSize = window.getComputedStyle(
+      document.documentElement,
+    ).fontSize;
+    const isBS5 = rootFontSize === "16px";
+    const styles = window.getComputedStyle(document.documentElement);
+    const rootScale = 10 / 16;
+
+    const scaleRemVariable = (name) => {
+      const value = styles.getPropertyValue(name).trim();
+      const remValue = parseFloat(value);
+
+      if (value.endsWith("rem") && !Number.isNaN(remValue)) {
+        document.documentElement.style.setProperty(
+          name,
+          `${remValue * rootScale}rem`,
+        );
+      }
+    };
+
+    if (isBS5) {
+      scaleRemVariable("--table-border-radius");
+      scaleRemVariable("--table-padding");
+      scaleRemVariable("--table-header-height");
+      scaleRemVariable("--table-header-font-size");
+      scaleRemVariable("--table-data-height");
+      scaleRemVariable("--table-data-font-size");
+      document.documentElement.style.setProperty("--root-font-size", "16px");
+    }
+  })();
+</script>
+
+<table class="styled">
+  <tr>
+    <th>Header 1</th>
+    <th>Header 2</th>
+    <th>Header 3</th>
+    <th>Header 4</th>
+  </tr>
+  <tr>
+    <td>Row 1, Col 1</td>
+    <td>Row 1, Col 2</td>
+    <td>Row 1, Col 3</td>
+    <td>Row 1, Col 4</td>
+  </tr>
+  <tr>
+    <td>Row 2, Col 1</td>
+    <td>Row 2, Col 2</td>
+    <td>Row 2, Col 3</td>
+    <td>Row 2, Col 4</td>
+  </tr>
+  <tr>
+    <td>Row 3, Col 1</td>
+    <td>Row 3, Col 2</td>
+    <td>Row 3, Col 3</td>
+    <td>Row 3, Col 4</td>
+  </tr>
+</table>
