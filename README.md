@@ -1,8 +1,8 @@
 # Design System
 
-Select a component below to view its docs.
-
 ## Components
+
+Select a component below to view its docs.
 
 | Component | Docs |
 | --- | --- |
@@ -18,3 +18,9 @@ Select a component below to view its docs.
 ### Colors
 
 ![Colors](assets/colors.png)
+
+### Typography
+
+![Desktop Fonts](assets/typography-desktop.png)
+
+![Mobile Fonts](assets/typography-mobile.png)
