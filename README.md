@@ -12,3 +12,9 @@ Select a component below to view its docs.
 | Search Bar | [View docs](./search-bar/) |
 | Side Tabbed Box | [View docs](./side-tab-box/) |
 | Table | [View docs](./table/) |
+
+## Foundations
+
+### Colors
+
+![Colors](assets/colors.png)
