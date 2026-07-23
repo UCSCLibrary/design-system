@@ -1,0 +1,127 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+  #menu-dropdown {
+    --scale: 0.625;
+    --dropdown-width: calc(29rem * var(--scale));
+    --button-height: calc(3rem * var(--scale));
+    --padding-y: calc(0.75rem * var(--scale));
+    --padding-x: calc(1rem * var(--scale));
+    --item-padding-y: calc(0.9rem * var(--scale));
+    --font-size: calc(1rem * var(--scale));
+    --border-width: calc(0.1rem * var(--scale));
+    --active-border-width: calc(0.5rem * var(--scale));
+    --caret-width: calc(0.4rem * var(--scale));
+    --caret-height: calc(0.45rem * var(--scale));
+    --underline-width: calc(0.125rem * var(--scale));
+    --underline-offset: calc(0.2rem * var(--scale));
+    width: 100%;
+    max-width: var(--dropdown-width);
+    font-family: "Open Sans", Arial, sans-serif;
+  }
+
+  #menu-dropdown .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: var(--button-height);
+    padding: var(--padding-y) var(--padding-x);
+    border: var(--border-width) solid #d4d4d4;
+    border-radius: 0;
+    background-color: #fff;
+    color: #003c6c;
+    font-size: var(--font-size);
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: left;
+    box-shadow: none;
+  }
+
+  #menu-dropdown .dropdown-toggle:hover,
+  #menu-dropdown .dropdown-toggle:focus,
+  #menu-dropdown .dropdown-toggle.show {
+    border-color: #d4d4d4;
+    background-color: #fff;
+    color: #003c6c;
+    box-shadow: none;
+  }
+
+  #menu-dropdown .dropdown-toggle::after {
+    width: 0;
+    height: 0;
+    margin-left: var(--padding-x);
+    border-top: var(--caret-height) solid #343a40;
+    border-right: var(--caret-width) solid transparent;
+    border-bottom: 0;
+    border-left: var(--caret-width) solid transparent;
+    transition: transform 0.15s ease-in-out;
+  }
+
+  #menu-dropdown .dropdown-toggle.show::after {
+    border-top-color: #006aad;
+    transform: rotate(180deg);
+  }
+
+  #menu-dropdown .dropdown-menu {
+    width: 100%;
+    min-width: 100%;
+    margin-top: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: #fff;
+    box-shadow: none;
+  }
+
+  #menu-dropdown .dropdown-item {
+    padding: var(--item-padding-y) var(--padding-x);
+    border-bottom: var(--border-width) solid #d4d4d4;
+    color: #1f1f1f;
+    font-size: var(--font-size);
+    line-height: 1.35;
+    white-space: normal;
+  }
+
+  #menu-dropdown .dropdown-item:hover,
+  #menu-dropdown .dropdown-item:focus {
+    background-color: #f3faff;
+    color: #003c6c;
+  }
+
+  #menu-dropdown .dropdown-item.active,
+  #menu-dropdown .dropdown-item:active {
+    border-left: var(--active-border-width) solid #006aad;
+    background-color: #f3faff;
+    color: #003c6c;
+    text-decoration: underline;
+    text-decoration-color: #ffcc33;
+    text-decoration-thickness: var(--underline-width);
+    text-underline-offset: var(--underline-offset);
+  }
+</style>
+
+<div class="dropdown" id="menu-dropdown">
+  <button
+    aria-expanded="false"
+    class="btn dropdown-toggle"
+    data-bs-toggle="dropdown"
+    id="menu-button"
+    type="button"
+  >
+    Menu
+  </button>
+
+  <ul aria-labelledby="menu-button" class="dropdown-menu">
+    <li>
+      <a aria-current="page" class="dropdown-item active" href="#">
+        Item 1
+      </a>
+    </li>
+    <li><a class="dropdown-item" href="#">Item 2</a></li>
+    <li><a class="dropdown-item" href="#">Item 3</a></li>
+    <li><a class="dropdown-item" href="#">Item 4</a></li>
+    <li><a class="dropdown-item" href="#">Item 5</a></li>
+    <li><a class="dropdown-item" href="#">Item 6</a></li>
+  </ul>
+</div>
