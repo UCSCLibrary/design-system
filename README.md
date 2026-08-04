@@ -8,6 +8,7 @@ Select a component below to view its docs.
 | --- | --- |
 | Accordian | [View docs](./accordian/) |
 | Button | [View docs](./button/) |
+| Cards | [View docs](./card/) |
 | Dropdown | [View docs](./dropdown/) |
 | Search Bar | [View docs](./search-bar/) |
 | Side Tabbed Box | [View docs](./side-tab-box/) |

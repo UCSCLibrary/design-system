@@ -1,0 +1,89 @@
+<style type="text/css">
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap");
+
+  :root {
+    --card-width: 20.625rem;
+    --card-image-height: 11.25rem;
+    --card-background: #ffca38;
+    --card-text-color: #000;
+  }
+
+  .event-card {
+    box-sizing: border-box;
+    width: min(100%, var(--card-width));
+    overflow: hidden;
+    color: var(--card-text-color);
+    background: var(--card-background);
+    font-family: "Open Sans", Arial, sans-serif;
+  }
+
+  .event-card__media {
+    position: relative;
+    height: var(--card-image-height);
+    background: #e5e5e5;
+  }
+
+  .event-card__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .event-card__date {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 3.75rem;
+    min-height: 3.75rem;
+    padding: 0.35rem;
+    background: var(--card-background);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.05;
+  }
+
+  .event-card__day {
+    font-size: 1rem;
+  }
+
+  .event-card__content {
+    padding: 1rem;
+  }
+
+  .event-card__title {
+    margin: 0 0 1rem;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .event-card__description {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.2;
+  }
+</style>
+
+<article class="event-card">
+  <div class="event-card__media">
+    <img class="event-card__image" src="" alt="" />
+    <time class="event-card__date" datetime="2026-05-01">
+      <span class="event-card__day">01</span>
+      <span>May</span>
+    </time>
+  </div>
+  <div class="event-card__content">
+    <h2 class="event-card__title">Event Title</h2>
+    <p class="event-card__description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+    </p>
+  </div>
+</article>
