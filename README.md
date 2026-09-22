@@ -10,6 +10,7 @@ Select a component below to view its docs.
 | Button | [View docs](./button/) |
 | Cards | [View docs](./card/) |
 | Dropdown | [View docs](./dropdown/) |
+| Pagination | [View docs](./pagination/) |
 | Search Bar | [View docs](./search-bar/) |
 | Side Tabbed Box | [View docs](./side-tab-box/) |
 | Table | [View docs](./table/) |

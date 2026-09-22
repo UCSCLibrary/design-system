@@ -1,0 +1,90 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
+
+  .page-navigation {
+    --pagination-size: 45px;
+    --pagination-gap: 6px;
+    --pagination-radius: 10px;
+    --pagination-font-size: 22px;
+    --pagination-primary: #003c6c;
+    --pagination-surface: #f3faff;
+    font-family: "Open Sans", Arial, sans-serif;
+  }
+
+  .page-navigation > .pagination {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--pagination-gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    vertical-align: middle;
+  }
+
+  .page-navigation > .pagination > li {
+    display: block;
+  }
+
+  .page-navigation > .pagination > li > a,
+  .page-navigation > .pagination > li > span {
+    box-sizing: border-box;
+    display: flex;
+    float: none;
+    align-items: center;
+    justify-content: center;
+    min-width: var(--pagination-size);
+    height: var(--pagination-size);
+    margin: 0;
+    padding: 0 12px;
+    border: 1px solid var(--pagination-primary);
+    border-radius: var(--pagination-radius);
+    background-color: var(--pagination-primary);
+    color: #fff;
+    font-family: inherit;
+    font-size: var(--pagination-font-size);
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+  }
+
+  .page-navigation > .pagination > li > a:hover,
+  .page-navigation > .pagination > li > a:focus,
+  .page-navigation > .pagination > .active > a,
+  .page-navigation > .pagination > .active > span {
+    border-color: var(--pagination-primary);
+    background-color: var(--pagination-surface);
+    color: var(--pagination-primary);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+  }
+
+  .page-navigation > .pagination > li > a:focus-visible {
+    outline: 2px solid var(--pagination-primary);
+    outline-offset: 2px;
+  }
+
+  .page-navigation > .pagination > .pagination-ellipsis > span {
+    align-items: flex-end;
+    min-width: 37px;
+    padding: 0 0 3px;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    color: #000;
+    cursor: default;
+  }
+</style>
+
+<nav class="page-navigation" aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="active">
+      <a href="" aria-label="Page 1" aria-current="page">1</a>
+    </li>
+    <li><a href="" aria-label="Page 2">2</a></li>
+    <li class="pagination-ellipsis" aria-hidden="true"><span>.....</span></li>
+    <li><a href="" aria-label="Page 3">3</a></li>
+    <li><a href="" aria-label="Page 4">4</a></li>
+  </ul>
+</nav>
