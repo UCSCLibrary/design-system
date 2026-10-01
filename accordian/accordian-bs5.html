@@ -1,7 +1,7 @@
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
-  #copyright-accordion {
+  #accordian-bs5 {
     --bs-accordion-bg: #f3faff;
     --bs-accordion-active-bg: #003c6c;
     --bs-accordion-active-color: #fff;
@@ -22,39 +22,41 @@
     --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='10' viewBox='0 0 17 10'%3E%3Cpath fill='%23ffffff' d='M16.6258 9.6176C16.3861 9.86245 16.0611 10 15.7222 10C15.3833 10 15.0583 9.86245 14.8186 9.6176L8.49228 3.15257L2.16593 9.6176C1.92488 9.85551 1.60205 9.98716 1.26694 9.98418C0.931843 9.9812 0.611292 9.84385 0.374331 9.60169C0.137369 9.35954 0.0029583 9.03196 4.76837e-05 8.68951C-0.00286484 8.34706 0.125956 8.01715 0.358763 7.77082L7.5887 0.382399C7.82837 0.137549 8.15339 0 8.49228 0C8.83118 0 9.1562 0.137549 9.39587 0.382399L16.6258 7.77082C16.8654 8.01575 17 8.34789 17 8.69421C17 9.04053 16.8654 9.37268 16.6258 9.6176Z'/%3E%3C/svg%3E");
   }
 
-  #copyright-accordion .accordion-item + .accordion-item {
+  #accordian-bs5 .accordion-item + .accordion-item {
     margin-top: 0.125rem;
   }
 
-  #copyright-accordion .accordion-item,
-  #copyright-accordion .accordion-header,
-  #copyright-accordion .accordion-button,
-  #copyright-accordion .accordion-collapse,
-  #copyright-accordion .accordion-body {
+  #accordian-bs5 .accordion-item,
+  #accordian-bs5 .accordion-header,
+  #accordian-bs5 .accordion-button,
+  #accordian-bs5 .accordion-collapse,
+  #accordian-bs5 .accordion-body {
     overflow: hidden;
   }
 
-  #copyright-accordion .accordion-item {
+  #accordian-bs5 .accordion-item {
     border-radius: var(--bs-accordion-border-radius);
   }
 
-  #copyright-accordion .accordion-button {
+  #accordian-bs5 .accordion-button {
     border-radius: var(--bs-accordion-border-radius);
   }
 
-  #copyright-accordion .accordion-button:not(.collapsed) {
+  #accordian-bs5 .accordion-button:not(.collapsed) {
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
 
-  #copyright-accordion .accordion-collapse.show .accordion-body,
-  #copyright-accordion .accordion-collapse.collapsing .accordion-body {
+  #accordian-bs5 .accordion-collapse.show .accordion-body,
+  #accordian-bs5 .accordion-collapse.collapsing .accordion-body {
     border-bottom-right-radius: var(--bs-accordion-border-radius);
     border-bottom-left-radius: var(--bs-accordion-border-radius);
   }
 
-  #copyright-accordion .accordion-button {
+  #accordian-bs5 .accordion-button {
     align-items: center;
+    color: var(--bs-accordion-btn-color);
+    background-color: var(--bs-accordion-btn-bg);
     font-family: "Open Sans", Courier, monospace;
     font-weight: 600;
     text-align: left;
@@ -68,13 +70,15 @@
     box-shadow: none;
   }
 
-  #copyright-accordion .accordion-button:not(.collapsed) {
+  #accordian-bs5 .accordion-button:not(.collapsed) {
+    color: var(--bs-accordion-active-color);
+    background-color: var(--bs-accordion-active-bg);
     text-decoration-color: #fc3;
     box-shadow: none;
   }
 </style>
 
-<div class="accordion" id="copyright-accordion">
+<div class="accordion" id="accordian-bs5">
   <div class="accordion-item">
     <h2 class="accordion-header" id="copyright-heading-1">
       <button
@@ -92,7 +96,7 @@
     <div
       aria-labelledby="copyright-heading-1"
       class="accordion-collapse collapse show"
-      data-bs-parent="#copyright-accordion"
+      data-bs-parent="#accordian-bs5"
       id="collapse-1"
     >
       <div class="accordion-body">
@@ -123,7 +127,7 @@
     <div
       aria-labelledby="copyright-heading-2"
       class="accordion-collapse collapse"
-      data-bs-parent="#copyright-accordion"
+      data-bs-parent="#accordian-bs5"
       id="collapse-2"
     >
       <div class="accordion-body">
@@ -149,7 +153,7 @@
     <div
       aria-labelledby="copyright-heading-3"
       class="accordion-collapse collapse"
-      data-bs-parent="#copyright-accordion"
+      data-bs-parent="#accordian-bs5"
       id="collapse-3"
     >
       <div class="accordion-body">
@@ -167,7 +171,7 @@
     const version = rootFontSize === "16px" ? "Bootstrap 5" : "Bootstrap 3";
 
     if (version !== "Bootstrap 5") {
-      document.getElementById("copyright-accordion").style.display = "none";
+      document.getElementById("accordian-bs5").style.display = "none";
     }
   })();
 </script>
