@@ -9,9 +9,17 @@
     --font-size: 1.25rem;
   }
 
+  .primo-search-form {
+    display: flex;
+    clear: both;
+    width: min(100%, var(--width));
+    margin-top: 1rem;
+  }
+
   .search-bar {
     width: calc(var(--width) * 4 / 5);
     height: var(--height);
+    box-sizing: border-box;
     padding: var(--search-padding);
     border: none;
     border-radius: var(--search-border);
@@ -25,6 +33,7 @@
   .search-btn {
     width: calc(var(--width) * 1 / 5);
     height: var(--height);
+    box-sizing: border-box;
     border: none;
     background: #003c6c;
     color: #fff;
@@ -76,6 +85,7 @@
 </script>
 
 <form
+  class="primo-search-form"
   action="https://ucsc.primo.exlibrisgroup.com/discovery/search"
   enctype="application/x-www-form-urlencoded; charset=utf-8"
   method="get"
