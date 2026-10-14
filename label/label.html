@@ -1,0 +1,77 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap");
+
+  :root {
+    --scale: 1;
+    --label-font-size: calc(0.6875rem * var(--scale));
+    --label-height: calc(1.625rem * var(--scale));
+    --label-padding-x: calc(0.875rem * var(--scale));
+    --label-border-width: calc(1px * var(--scale));
+    --label-default-bg: #91dcf0;
+    --label-default-text: #174866;
+    --label-selected-bg: #e3f8ff;
+    --label-accent: #3188e8;
+    font-family: "Open Sans", Arial, sans-serif;
+  }
+
+  .filter-label {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--label-height);
+    padding: 0 var(--label-padding-x);
+    border: var(--label-border-width) solid transparent;
+    border-radius: 999px;
+    font:
+      700 var(--label-font-size) / 1.2 "Open Sans",
+      Arial,
+      sans-serif;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+      color 0.15s ease,
+      background-color 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  .filter-label:focus-visible {
+    outline: calc(2px * var(--scale)) solid currentColor;
+    outline-offset: calc(2px * var(--scale));
+  }
+
+  .filter-label--label {
+    background-color: var(--label-default-bg);
+    color: var(--label-default-text);
+  }
+
+  .filter-label--label[aria-pressed="true"] {
+    border-color: var(--label-accent);
+    background-color: var(--label-selected-bg);
+    color: var(--label-accent);
+  }
+</style>
+
+<button
+  class="filter-label filter-label--label"
+  type="button"
+  aria-pressed="false"
+>
+  Label
+</button>
+<button
+  class="filter-label filter-label--label"
+  type="button"
+  aria-pressed="false"
+>
+  Label
+</button>
+
+<script>
+  document.querySelectorAll(".filter-label").forEach((label) => {
+    label.addEventListener("click", () => {
+      const isPressed = label.getAttribute("aria-pressed") === "true";
+      label.setAttribute("aria-pressed", String(!isPressed));
+    });
+  });
+</script>
