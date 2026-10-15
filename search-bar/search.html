@@ -1,12 +1,12 @@
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
   :root {
     --width: 40rem;
     --height: 4rem;
   }
 
-  .primo-search-form {
+  .search-form {
     display: flex;
     clear: both;
     width: min(100%, var(--width));
@@ -22,7 +22,7 @@
     border-radius: 0.177rem;
     background: #f3f3f3;
     color: #424242;
-    font-family: 'Open Sans';
+    font-family: "Open Sans";
     font-size: 1.25rem;
     font-weight: 400;
   }
@@ -34,7 +34,7 @@
     border: none;
     background: #003c6c;
     color: #fff;
-    font-family: 'Open Sans';
+    font-family: "Open Sans";
     font-size: 1.25rem;
     font-weight: 700;
   }
@@ -47,14 +47,14 @@
 
 <script>
   function searchPrimo() {
-    document.getElementById('primoQuery').value =
-      'any,contains,' + document.getElementById('primoQueryTemp').value;
-    document.forms['searchForm'].submit();
+    document.getElementById("primoQuery").value =
+      "any,contains," + document.getElementById("primoQueryTemp").value;
+    document.forms["searchForm"].submit();
   }
 </script>
 
 <form
-  class="primo-search-form"
+  class="search-form"
   action="https://ucsc.primo.exlibrisgroup.com/discovery/search"
   enctype="application/x-www-form-urlencoded; charset=utf-8"
   method="get"
